@@ -1,0 +1,24 @@
+GET http://localhost:3000/subscribers
+
+###
+GET http://localhost:3000/subscribers/64307ac5eff3833dcb3697cb
+
+###
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "name" : "Lota Olikeze",
+    "subscribedToChannel": "nelo's Youtube Channel"
+}
+
+###
+DELETE http://localhost:3000/subscribers/64307ac5eff3833dcb3697cb
+
+###
+PATCH http://localhost:3000/subscribers/64307ac5eff3833dcb3697c
+Content-Type: application/json
+
+{
+    "name" : "Amazing Person"
+}
