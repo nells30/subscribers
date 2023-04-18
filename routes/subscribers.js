@@ -72,31 +72,7 @@ router.delete('/:id', async(req, res) => {
         res.status(500).json({ message: err.message})
     }
 })
-// router.delete('/:id', getSubscriber, async(req, res) => {
-//     try{
-//         await res.subscriber.deleteOne()
-//         res.json({ message: "Successfully deleted subscriber"})
-//     } catch (err) {
-//         res.status(500).json({ message: err.message})
-//     }
-// })
 
-
-//get subscriber middleware
-// async function getSubscriber(req, res, next)  {
-//     let subscriber;
-//     try{
-//         subscriber = await Subscriber.findById(req.params.id)
-//         console.log("ssssssss", subscriber)
-//         if(!subscriber) {
-//             return res.status(404).json({ message: 'Cannot find subscriber' })
-//         }
-//     }catch (err){
-//         return res.status(500).json({ message: err.messsage })
-//     }
-//     res.subscriber = subscriber
-//     next()
-// }
 
 async function getSubscriber(req, res, next) {
     let subscriber;
