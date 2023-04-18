@@ -14,23 +14,7 @@ router.get('/', async(req, res) => {
 
 //Getting one
 router.get('/:id', getSubscriber, async(req, res) => {
-    //  const id = req.params.id
-    //  const subscriber = await Subscriber.findById(id)
      return res.status(400).json(res.subscriber)
-
-    // const id = req.params.id
-    // console.log(id)
-    // try{
-    //     const subscriber = await Subscriber.findById(id)
-    //     console.log("ssssssss", subscriber)
-    //     if(subscriber === null) {
-    //         return res.status(404).json({ message: 'Cannot find subscriber' })
-    //     }
-    //     //res.subscriber = subscriber
-    //     res.status(200).json(subscriber.name)
-    // }catch (err){
-    //     console.log(err)
-    //     return res.status(500).json({ message: err })
     }
 )
 
@@ -77,7 +61,7 @@ router.delete('/:id', async(req, res) => {
 async function getSubscriber(req, res, next) {
     let subscriber;
     try {
-      subscriber = await Subscriber.findById(req.params.id);
+      const subscriber = await Subscriber.findById(req.params.id);
       if (subscriber === null) {
         return res.status(404).json({ message: 'Cannot find subscriber' });
       }
